@@ -1,0 +1,6 @@
+#!/bin/bash
+while read -r line || [[ -n "$line" ]]; do
+    first_letter=$(echo "$line" | awk '{print substr($0,1,1)}')
+    decoded_message="${decoded_message}${first_letter}"
+done
+echo -e "$decoded_message"
